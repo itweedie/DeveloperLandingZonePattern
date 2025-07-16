@@ -1,6 +1,17 @@
 
 # Developer Landing Zone Architectural Pattern
 
+
+
+| Attribute                  | Value                          |
+|---------------------------|---------------------------------|
+| Pattern Name              | Developer Landing Zone Pattern |
+| Architecture Continuum    | Common Systems Architecture     |
+| Domain                    | Identity & Access Management    |
+| Reusability               | High                            |
+| Applicable Layers         | Application, Technology         |
+
+![alt text](image.png)
 ## Intent
 Provide a secure, automated, and reusable approach for onboarding and offboarding developers into isolated landing zones within a dedicated Azure tenant, leveraging identity governance, access packages, and automation.
 
