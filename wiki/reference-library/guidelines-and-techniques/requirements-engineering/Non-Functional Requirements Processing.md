@@ -294,9 +294,9 @@ stateDiagram-v2
 ### Recommended Tools
 
 **Requirements Management:**
-- Azure DevOps Work Items for tracking
-- Confluence for documentation
-- Excel/SharePoint for requirements matrices
+- Work Items for tracking
+- WiKi for documentation
+- Excel for requirements matrices
 
 **Testing and Validation:**
 - Automated testing frameworks for performance NFRs
