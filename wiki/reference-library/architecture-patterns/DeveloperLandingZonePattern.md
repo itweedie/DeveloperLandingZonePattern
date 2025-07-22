@@ -34,42 +34,33 @@ Provide a secure, automated, and reusable approach for onboarding and offboardin
 - **User Experience**: Developers should have a seamless experience accessing resources.
 
 ### Architecture Layers Diagram
-![Architecture Layers Diagram](https://www.plantuml.com/plantuml/png/hPD1Rvmm48Nl_8fH3hqH8aNjeOSgAzfKI4s9IczH3XCpi5Rm6Dd3haZL_rx045Xj3v7Q6_xy_DvunjnuGIUTQIB_hBb5XmOQpIHzIs2TxErcesmrN5zTRKYBwXbhAgHl21mfGQuRYgAPmyMjxRX4qPPXvzHU2odf75q0UhZTmQy8u67tCX3umk8Gii-FuzQ40dbus8kq_cEID8IEBurMpdfRoQMo9Y6EEv_WA4zGYJvGNEgn4ElwvF5njBzR3i3rX_UJ-ztmiV4z7ez_TNrbyQ0FNlVsI0xk6vJAEZEPJMWX6zTsvEtCJ_tdmhAIMBJqyDKUo36o8YW4kKHN-ibxKQo2Vsb7_Ueo5l1xCwNK6cCPYjuB6Ny-gRHOHgKK-U7EuM0eCh05_QS2ftitP8WbDiXOXq-Sik9s3Wjz_46TnwU68ESdYwxKN2TvLItVGxKYv3XKkseMVDA9ZClEY-lFUv3DBLWKST6IqfLMa5hJDdgQJduWrs0VebQ-u9EetDN8-cNwELQpiznywNqwn5e3nHuTtLlDCeK4ki8tzT-FydQKpqznZU_46XI2RxOEqvt1i7wBTNZsCSwdPlllQCP1f9OFnEDzFRo3dyJ8icqZLpg41lshFCpeTWTnQOySVnhVOvGMwphRHTcwoeVTw8Q6EPdc3m00)
+```mermaid
+flowchart TD
+  subgraph FA["Foundation Architecture"]
+    AzureEntra["Azure Entra ID"]
+    M365["Microsoft 365"]
+    PowerPlatform["Power Platform"]
+    IdentityGovernance["Identity Governance Standards"]
+  end
 
+  subgraph CSA["Common Systems Architecture"]
+    AccessPackages["Access Packages"]
+    OnboardingPatterns["Reusable Onboarding/Offboarding Patterns"]
+  end
 
-```plantuml
-@startuml
-skinparam linetype ortho
-skinparam dpi 300
-skinparam packageStyle rectangle
+  subgraph IA["Industry Architecture"]
+    ComplianceOverlays["Industry-Specific Compliance Overlays"]
+  end
 
-package "Foundation Architecture" as FA {
-  [Azure Entra ID] as AzureEntra [[https://learn.microsoft.com/en-us/azure/active-directory/]]
-  [Microsoft 365] as M365 [[https://www.microsoft.com/en-us/microsoft-365]]
-  [Power Platform] as PowerPlatform [[https://powerplatform.microsoft.com/]]
-  [Identity Governance Standards] as IdentityGovernance [[https://learn.microsoft.com/en-us/azure/active-directory/governance/]]
-}
+  subgraph OSA["Organization-Specific Architecture"]
+    CustomSharePoint["Custom SharePoint"]
+    AutomateLog["Specific Automate Log"]
+    NamingConventions["Naming Conventions & Tenant-Specific Config"]
+  end
 
-package "Common Systems Architecture" as CSA {
-  [Access Packages] as AccessPackages [[https://learn.microsoft.com/en-us/azure/active-directory/governance/entitlement-management-access-packages]]
-  [Reusable Onboarding/Offboarding Patterns] as OnboardingPatterns
-}
-
-package "Industry Architecture" as IA {
-  [Industry-Specific Compliance Overlays] as ComplianceOverlays
-}
-
-package "Organization-Specific Architecture" as OSA {
-  [Custom SharePoint] as CustomSharePoint [[https://learn.microsoft.com/en-us/sharepoint/]]
-  [Specific Automate Log] as AutomateLog [[https://learn.microsoft.com/en-us/power-automate/]]
-  [Naming Conventions & Tenant-Specific Config] as NamingConventions
-}
-
-FA -down-> CSA
-CSA -down-> IA
-IA -down-> OSA
-
-@enduml
+  FA --> CSA
+  CSA --> IA
+  IA --> OSA 
 ```
 
 
