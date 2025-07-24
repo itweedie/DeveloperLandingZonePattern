@@ -8,7 +8,7 @@ This document outlines the approach for organizing, categorizing, and processing
 - Functional requirement analysis
 - Tool-specific configuration details
 
-### Key Touch points with other features
+### Key Touch points with other guidelines
 
 - **Architecture Guidelines:** Establishes standards that apply across all features
 - **Development Standards:** Defines coding and development practices
@@ -47,7 +47,7 @@ flowchart TD
     F --> I[Engage with Business]
 ```
 
-### Step 2: Non-Functional Requirements Categorization
+### Step 2: Non-Functional Requirements Architectural Layers
 
 Once identified as NFRs, requirements are categorized into the following hierarchy:
 
@@ -82,7 +82,66 @@ mindmap
       Integration Points
 ```
 
-## NFR Categorization
+### Step 3: Non-Functional Requirements Domain Categorisation
+
+Once identified as NFRs, requirements are categorized into the following hierarchy:
+
+```mermaid
+mindmap
+  root((Non-Functional Requirements))
+    Access Management
+      Privileged Access
+      System Access
+    Availability & Resilience
+      Availability
+      Resilience
+      Service Continuity
+      Disaster Recovery
+    Change & Release Management
+      Change Management
+      Process Assurance
+      Release & Deployment
+      Testing
+    Capacity & Performance
+      Concurrent Users
+      Capacity Management
+      Performance Management
+      Scalability
+      Volumetrics
+    Event & Incident Management
+      Event Monitoring
+      Exception Handling
+      Error Management
+      Incident Alerts
+      Incident Classification
+    Information Security
+      Security Standards
+      Data Protection
+    IT Operations
+      Service Improvement
+      Service Documentation
+      Escalation Process
+      Knowledge Management
+    Monitoring & Reporting
+      Error Logs/Reports
+      Capacity Thresholds
+      Usage Reports
+      Service Reports
+    Data Management
+      Backup and Recovery
+      Data Storage
+      Data Validation
+    User Experience
+      Usability
+      Accessibility
+      Compatibility
+```
+
+
+
+
+
+## NFR Architectural Layers
 
 
 ### 1. Platform/Product Level NFRs
@@ -160,6 +219,82 @@ mindmap
 - "Case processing workflow must complete within 24 hours"
 - "Document uploads must be virus-scanned before storage"
 - "Financial calculations must be accurate to 2 decimal places"
+
+
+## NFR Domain Categorisation
+
+### 1. Access Management
+- **Privileged Access:** Requirements for administrative access controls and management
+- **System Access:** User authentication, authorization, and account management requirements
+
+### 2. Availability & Resilience
+- **Availability:** System uptime requirements and service level objectives
+- **Resilience:** System's ability to maintain service during disruptions
+- **Service Continuity:** Business continuity planning and implementation
+- **Disaster Recovery:** Recovery point/time objectives and disaster response procedures
+
+### 3. Change & Release Management
+- **Change Management:** Requirements for managing system changes
+- **Process Assurance:** Quality gates and approval workflows
+- **Release & Deployment:** Requirements for deployment processes
+- **Testing:** Testing requirements for changes and releases
+
+### 4. Capacity & Performance
+- **Concurrent Users:** Number of simultaneous users the system must support
+- **Capacity Management:** Resource allocation and scaling requirements
+- **Performance Management:** Response times, rendering speeds, and processing times
+- **Scalability:** Requirements for scaling resources based on demand
+- **Volumetrics:** Data volume requirements and projections
+
+### 5. Event & Incident Management
+- **Event Monitoring:** System event logging and monitoring requirements
+- **Exception Handling:** Requirements for handling exceptional conditions
+- **Error Management:** Error logging, reporting, and resolution
+- **Incident Alerts:** Alerting thresholds and notification requirements
+- **Incident Classification:** Requirements for categorizing and prioritizing incidents
+
+#### 6. Information Security
+- **Security Standards:** Compliance with security frameworks and standards
+- **Data Protection:** Requirements for data encryption and protection
+
+### 7. IT Operations
+- **Service Improvement:** Continuous improvement requirements
+- **Service Documentation:** Documentation standards and requirements
+- **Escalation Process:** Requirements for issue escalation procedures
+- **Knowledge Management:** Requirements for maintaining operational knowledge
+
+### 8. Monitoring & Reporting
+- **Error Logs/Reports:** Requirements for error tracking and reporting
+- **Capacity Thresholds:** Monitoring thresholds and alerts
+- **Usage Reports:** Requirements for usage statistics and reporting
+- **Service Reports:** Service level reporting requirements
+
+### 9. Data Management
+- **Backup and Recovery:** Data backup frequency and recovery requirements
+- **Data Storage:** Requirements for data retention and storage
+- **Data Validation:** Requirements for ensuring data integrity
+
+### 10. User Experience
+- **Usability:** Requirements for user interface design and user experience
+- **Accessibility:** Compliance with accessibility standards
+- **Compatibility:** Browser, device, and platform compatibility requirements
+
+## Mapping Between Categorization Approaches
+
+The following matrix shows how the architectural layers and service management categories relate to each other:
+
+| Service Management Category | Platform Level | Architecture Guidelines | Development Standards | Application Level | Feature Specific |
+|----------------------------|----------------|-------------------------|----------------------|-------------------|-----------------|
+| Access Management          | ✓              | ✓                       |                      |                   | ✓               |
+| Availability & Resilience  | ✓              | ✓                       |                      |                   |                 |
+| Change & Release Management|                | ✓                       | ✓                    |                   |                 |
+| Capacity & Performance     | ✓              |                         |                      | ✓                 |                 |
+| Event & Incident Management|                | ✓                       | ✓                    |                   |                 |
+| Information Security       | ✓              | ✓                       |                      |                   |                 |
+| IT Operations              |                | ✓                       | ✓                    |                   |                 |
+| Monitoring & Reporting     |                | ✓                       |                      |                   | ✓               |
+| Data Management            | ✓              | ✓                       |                      |                   | ✓               |
+| User Experience            |                |                         |                      | ✓                 | ✓               |
 
 ## NFR Processing Workflow
 
