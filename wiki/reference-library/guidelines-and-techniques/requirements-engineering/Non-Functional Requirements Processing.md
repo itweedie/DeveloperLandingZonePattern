@@ -82,7 +82,8 @@ mindmap
       Integration Points
 ```
 
-## NFR Classification Hierarchy
+## NFR Categorization
+
 
 ### 1. Platform/Product Level NFRs
 
